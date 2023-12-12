@@ -7,6 +7,7 @@ We propose Lasagna, a layered image editing approach that allows controlled and 
 <p align="center">
   <img src="https://cs-people.bu.edu/dbash/img/lasagna.png" />
 </p>
+
 ## Setup
 ### Install dependencies
 ````
