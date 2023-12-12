@@ -1,5 +1,12 @@
 # *Lasagna:* Layered Score Distillation for Disentangled Object Relighting
+**[Dina Bashkirova](https://cs-people.bu.edu/dbash/), [Arijit Ray](https://arijitray1993.github.io/), [Rupayan Mallick](https://contact.georgetown.edu/view/rm2083/),
+[Sarah Adel Bargal](https://bargal.georgetown.domains/), [Jianming Zhang](https://jimmie33.github.io/), [Ranjay Krishna](https://ranjaykrishna.com/index.html), [Kate Seanko](http://ai.bu.edu/ksaenko.html/)** </br>
+We propose Lasagna, a layered image editing approach that allows controlled and language-guided object relighting. Lasagna achieves a controlled relighting via layered score distillation sampling that allows extracting the diffusion model lighting prior without changing other crucial aspects of the input image.
+<!-- ![img](https://cs-people.bu.edu/dbash/img/i2i_eval.png) -->
 
+<p align="center">
+  <img src="https://cs-people.bu.edu/dbash/img/lasagna.png" />
+</p>
 ## Setup
 ### Install dependencies
 ````
