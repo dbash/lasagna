@@ -14,5 +14,5 @@ pip install git+https://github.com/huggingface/diffusers
 ### Download the ControlNet checkpoint
 ```
 wget https://cs-people.bu.edu/dbash/checkpoints/relit_controlnet.zip
-unzip relit_controlnet ./
+unzip relit_controlnet.zip ./
 ```
