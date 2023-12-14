@@ -12,9 +12,8 @@ from controlnet_guidance import StableDiffusionControlNet
 import unet_generator
 from shading_dataset import ShadingDataset, SingleImageDataset, collate_fn
 from optimizer import Adan
-from shading_controlnet_trainer import ShadingControlNetTrainer
-import shading_controlnet_multilayer_trainer
-from shading_controlnet_multilayer_trainer import ShadingControlNetMultiLayerTrainer
+import shading_controlnet_trainer
+from shading_controlnet_trainer import ShadingControlNetMultiLayerTrainer
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Simple example of a training script.")
@@ -225,16 +224,11 @@ def main(args):
         collate_fn=collate_fn,
         batch_size=args.batch_size,
         num_workers=0)
-    
-    if args.multilayer:
-        model = unet_generator.TwoLayerUNet(n_channels=3)
-        composition_fn = shading_controlnet_multilayer_trainer.mult_and_divisive
-        trainer_cls = ShadingControlNetMultiLayerTrainer
-    else:
-        model = unet_generator.ShadingUNet(n_channels=3)
-        composition_fn = additive if "additive" in args.composition_fn else multiplicative_luminosity
-        trainer_cls = ShadingControlNetTrainer
-    trainer = trainer_cls(
+    torch._dynamo.config.suppress_errors = True
+    model = unet_generator.TwoLayerUNet(n_channels=3)
+    composition_fn = shading_controlnet_trainer.mult_and_divisive
+
+    trainer = ShadingControlNetMultiLayerTrainer(
             name=args.exp_name,
             model=model,
             guidance=guidance,
