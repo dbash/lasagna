@@ -224,7 +224,7 @@ def main(args):
         collate_fn=collate_fn,
         batch_size=args.batch_size,
         num_workers=0)
-    torch._dynamo.config.suppress_errors = True
+
     model = unet_generator.TwoLayerUNet(n_channels=3)
     composition_fn = shading_controlnet_trainer.mult_and_divisive
 

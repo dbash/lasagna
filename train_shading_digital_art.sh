@@ -1,6 +1,6 @@
 
 
-export CONTROLNET_PATH="./controlnet"
+export CONTROLNET_PATH="./controlnet/" # insert path to the downloaded ControlNet adaptor checkpoint
 img_path="./digital_art/hamburger/0.png"
 obj_name="hamburger"
 lighting_dir=3
