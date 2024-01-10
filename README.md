@@ -27,5 +27,5 @@ unzip relit_controlnet.zip ./
 ```
 ## Training Lasagna to relight an input image
 ```
-
+bash train_shading_digital_art.sh
 ```
