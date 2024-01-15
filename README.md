@@ -22,7 +22,7 @@ pip install git+https://github.com/huggingface/diffusers
 
 ### Download the ControlNet checkpoint
 ```
-wget https://cs-people.bu.edu/dbash/checkpoints/relit_controlnet.zip
+wget http://csr.bu.edu/ftp/recycle/lasagna_controlnet.zip
 unzip relit_controlnet.zip ./
 ```
 ## Training Lasagna to relight an input image
